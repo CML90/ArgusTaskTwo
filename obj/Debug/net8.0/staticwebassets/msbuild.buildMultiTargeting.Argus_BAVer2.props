@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/Argus_BAVer2.props" />
+</Project>
