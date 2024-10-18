@@ -8,7 +8,9 @@ using Argus_BAVer2.Data.Reducers;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddCardanoIndexer<BalanceByAddressDbContext>(builder.Configuration);
-builder.Services.AddSingleton<IReducer<IReducerModel>, BalanceByAddressReducer>();
+builder.Services.AddSingleton<IReducer<IReducerModel>, BalanceByAddressReducer>(/*["BalanceByAddress","OutputsBySlot","InputsBySlot"]*/);
+builder.Services.AddSingleton<IReducer<IReducerModel>, InputsBySlotReducer>();
+builder.Services.AddSingleton<IReducer<IReducerModel>, OutputsBySlotReducer>();
 
 var app = builder.Build();
 
